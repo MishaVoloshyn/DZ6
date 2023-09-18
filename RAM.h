@@ -16,6 +16,6 @@ public:
 	double GetPr();
 
 	~RAM();
-
+	 
 };
 

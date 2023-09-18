@@ -17,7 +17,7 @@ char* GPU::GetMo()
 {
 	return this->gpu_model;
 }
-void GPU::SetPr(double pr) {
+void GPU::SetPr(double pr) { 
 
 	this->gpu_price = pr;
 }

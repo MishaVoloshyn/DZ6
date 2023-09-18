@@ -15,7 +15,7 @@ void SSD::SetMo(const char* mo) {
 }
 char* SSD::GetMo()
 {
-	return this->ssd_model;
+	return this->ssd_model; 
 }
 void SSD::SetPr(double pr) {
 

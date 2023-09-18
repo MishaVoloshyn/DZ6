@@ -20,7 +20,7 @@ char* RAM::GetMo()
 void RAM::SetPr(double pr) {
 
 	this->ram_price = pr;
-}
+} 
 double RAM::GetPr()
 {
 	return this->ram_price;

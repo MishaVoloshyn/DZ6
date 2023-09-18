@@ -35,7 +35,7 @@ char* LaptopFin::GetCharUst()
 {
 	return this->charust;
 }
-void LaptopFin::PrintInf()
+void LaptopFin::ShowFinLaptop()
 {
 	cout << "Your Finallaptop: " << endl;
 	cout << "Name: " << this->name << endl;
@@ -105,7 +105,7 @@ LaptopFin::LaptopFin(const char* name, const char* color, const char* charust, c
 	strcpy_s(this->color, strlen(color) + 1, color);
 	this->charust = new char[strlen(charust) + 1];
 	strcpy_s(this->charust, strlen(charust) + 1, charust);
-	count++;
+	count++ ;
 
 };
 

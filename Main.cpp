@@ -11,7 +11,7 @@ using namespace std;
 
 int main() {
 
-	LaptopFin laptop("MSI", "Katana-Black", "Very Good", "Ryzen 5", 333, "Rtx 3050ti", 777, "SSD512", 111, "4DDR-SDRAM", 111);
-	laptop.PrintInf();		//show information
+	LaptopFin LaptopFin("MSI", "Katana-Black", "Very Good", "Ryzen 5", 333, "Rtx 3050ti", 777, "SSD512", 111, "4DDR-SDRAM", 111);
+	LaptopFin.ShowFinLaptop();
 
 }

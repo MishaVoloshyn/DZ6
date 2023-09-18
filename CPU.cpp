@@ -13,7 +13,7 @@ void CPU::SetMo(const char* mo)  {
 	this-> cpu_model = new char[strlen(mo) + 1];
 	strcpy_s(cpu_model, strlen(mo) + 1, mo);
 }
-char* CPU::GetMo()
+char* CPU::GetMo() 
 {
 	return this->cpu_model;
 }
