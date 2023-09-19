@@ -25,6 +25,14 @@ double SSD::GetPr()
 {
 	return this->ssd_price;
 }
+
+SSD::SSD(const SSD& laptop) {
+	this->ssd_model = new char[strlen(laptop.ssd_model) + 1];
+	strcpy_s(ssd_model, strlen(laptop.ssd_model) + 1, laptop.ssd_model);
+
+	this->ssd_price = laptop.ssd_price;
+}
+
 SSD::~SSD() {
 	delete[] ssd_model;
 }

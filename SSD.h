@@ -15,6 +15,8 @@ public:
 	char* GetMo();
 	double GetPr();
 
+	SSD(const SSD& laptop);
+
 	~SSD();
 
 }; 

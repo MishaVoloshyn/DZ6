@@ -15,6 +15,8 @@ public:
 	char* GetMo();
 	double GetPr();
 
+	RAM(const RAM& laptop);
+
 	~RAM();
 	 
 };

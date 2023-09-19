@@ -25,6 +25,14 @@ double GPU::GetPr()
 {
 	return this->gpu_price;
 }
+
+GPU::GPU(const GPU& laptop) {
+	this->gpu_model = new char[strlen(laptop.gpu_model) + 1];
+	strcpy_s(gpu_model, strlen(laptop.gpu_model) + 1, laptop.gpu_model);
+
+	this->gpu_price = laptop.gpu_price;
+}
+
 GPU::~GPU() {
 	delete[] gpu_model;
 }

@@ -25,6 +25,14 @@ double CPU::GetPr()
 {
 	return this->cpu_price;
 }
+
+CPU::CPU(const CPU& laptop) {
+	this->cpu_model = new char[strlen(laptop.cpu_model) + 1];
+	strcpy_s(cpu_model, strlen(laptop.cpu_model) + 1, laptop.cpu_model);
+
+	this->cpu_price = laptop.cpu_price;
+}
+
 CPU::~CPU() {
 	delete[] cpu_model;
 }

@@ -25,6 +25,14 @@ double RAM::GetPr()
 {
 	return this->ram_price;
 }
+
+RAM::RAM(const RAM& laptop) {
+	this->ram_model = new char[strlen(laptop.ram_model) + 1];
+	strcpy_s(ram_model, strlen(laptop.ram_model) + 1, laptop.ram_model);
+
+	this->ram_price = laptop.ram_price;
+}
+
 RAM::~RAM() {
 	delete[] ram_model;
 }

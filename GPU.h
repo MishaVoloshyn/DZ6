@@ -15,6 +15,8 @@ public:
 	char* GetMo();
 	double GetPr();
 
+	GPU(const GPU& laptop);
+
 	~GPU();
 	 
 };

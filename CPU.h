@@ -15,6 +15,8 @@ public:
 	char* GetMo();
 	double GetPr();
 
+	CPU(const CPU& laptop);
+
 	~CPU();
 	 
 };

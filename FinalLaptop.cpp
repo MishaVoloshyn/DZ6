@@ -10,32 +10,25 @@
 using namespace std;
 
 double FinalPrice = 0;
-int LaptopFin::count = 0;
+int Laptop::count = 0;
 
 //initializer
-LaptopFin::LaptopFin() :name(nullptr), color(nullptr), charust(nullptr), price(0) {
+Laptop::Laptop() :name(nullptr), color(nullptr), charust(nullptr), price(0) {
 }
 
-
-double LaptopFin::GetPr()
+void Laptop::SetColor(const char* c)
 {
-	return this->price;
+	this->color = new char[strlen(c) + 1];
+	strcpy_s(this->color, strlen(c) + 1, c);
 }
 
-char* LaptopFin::GetName()
-{
-	return this->name;
-}
-
-char* LaptopFin::GetColor()
+char* Laptop::GetColor()
 {
 	return this->color;
 }
-char* LaptopFin::GetCharUst()
-{
-	return this->charust;
-}
-void LaptopFin::ShowFinLaptop()
+
+
+void Laptop::ShowFinLaptop()
 {
 	cout << "Your Finallaptop: " << endl;
 	cout << "Name: " << this->name << endl;
@@ -51,16 +44,16 @@ void LaptopFin::ShowFinLaptop()
 }
 
 
-LaptopFin::LaptopFin(const char* n) {
+Laptop::Laptop(const char* n) {
 	this->name = nullptr;
 }
-LaptopFin::LaptopFin(const char* n, const char* c) :LaptopFin(n) {
+Laptop::Laptop(const char* n, const char* c) :Laptop(n) {
 	this->color = nullptr;
 }
-LaptopFin::LaptopFin(const char* n, const char* c, const char* u ) :LaptopFin(n, c) {
+Laptop::Laptop(const char* n, const char* c, const char* u ) :Laptop(n, c) {
 	this->charust = nullptr;
 }
-LaptopFin::LaptopFin(const char* n, const char* c, const char* u , double finalprice) :LaptopFin(n, c, u) {
+Laptop::Laptop(const char* n, const char* c, const char* u , double finalprice) :Laptop(n, c, u) {
 	this->price = 0;
 }
 
@@ -95,13 +88,15 @@ RAM::RAM(const char* m, double p) {
 	strcpy_s(ram_model, strlen(m) + 1, m);
 }
 
-LaptopFin::LaptopFin(const char* name, const char* color, const char* charust, const char* cpu_model, double cpu_price, const char* gpu_model, double gpu_price, const char* ssd_model, double ssd_price, const char* ram_model, double ram_price) : cpu(cpu_model, cpu_price), gpu(gpu_model, gpu_price), ssd(ssd_model, ssd_price), ram(ram_model, ram_price)
+Laptop::Laptop(const char* name, const char* color, const char* charust, const char* cpu_model, double cpu_price, const char* gpu_model, double gpu_price, const char* ssd_model, double ssd_price, const char* ram_model, double ram_price) : cpu(cpu_model, cpu_price), gpu(gpu_model, gpu_price), ssd(ssd_model, ssd_price), ram(ram_model, ram_price)
 {
 
 	this->name = new char[strlen(name) + 1];
 	strcpy_s(this->name, strlen(name) + 1, name);
+
 	this->price = FinalPrice;
 	this->color = new char[strlen(color) + 1];
+
 	strcpy_s(this->color, strlen(color) + 1, color);
 	this->charust = new char[strlen(charust) + 1];
 	strcpy_s(this->charust, strlen(charust) + 1, charust);
@@ -110,7 +105,19 @@ LaptopFin::LaptopFin(const char* name, const char* color, const char* charust, c
 };
 
 
-LaptopFin::~LaptopFin()		
+Laptop::Laptop(const Laptop& laptop)
+{
+	this->name = new char[strlen(laptop.name) + 1];
+	strcpy_s(this->name, strlen(laptop.name) + 1, laptop.name);
+
+	this->color = new char[strlen(laptop.color) + 1];
+	strcpy_s(this->color, strlen(laptop.color) + 1, laptop.color);
+
+	this->price = FinalPrice;
+	count++;
+}
+
+Laptop::~Laptop()		
 {
 	delete[] this->name;
 	delete[] this->color;
