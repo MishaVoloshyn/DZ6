@@ -40,6 +40,8 @@ void Laptop::ShowFinLaptop()
 	cout << "\nRAM:  model: " << ram.GetMo() << " price: " << ram.GetPr() << endl;
 	cout << "Price: " << this->price << "₴" << endl;
 	cout << "Amount: " << this->count << endl;
+	cout << "Mouse: " << this->mouse  << endl;
+	cout << "Kabel: " << this->kabel << endl;
 
 }
 
@@ -88,7 +90,7 @@ RAM::RAM(const char* m, double p) {
 	strcpy_s(ram_model, strlen(m) + 1, m);
 }
 
-Laptop::Laptop(const char* name, const char* color, const char* charust, const char* cpu_model, double cpu_price, const char* gpu_model, double gpu_price, const char* ssd_model, double ssd_price, const char* ram_model, double ram_price) : cpu(cpu_model, cpu_price), gpu(gpu_model, gpu_price), ssd(ssd_model, ssd_price), ram(ram_model, ram_price)
+Laptop::Laptop(const char* name, const char* color, const char* charust, const char* cpu_model, double cpu_price, const char* gpu_model, double gpu_price, const char* ssd_model, double ssd_price, const char* ram_model, double ram_price, Mouse* m, Kabel* k) : cpu(cpu_model, cpu_price), gpu(gpu_model, gpu_price), ssd(ssd_model, ssd_price), ram(ram_model, ram_price)
 {
 
 	this->name = new char[strlen(name) + 1];
